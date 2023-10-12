@@ -1,1 +1,1 @@
-# next-blog-app update
+# next-blog-app
