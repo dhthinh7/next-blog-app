@@ -39,6 +39,18 @@ export interface ICardList {
   cat?: string
 }
 
+const getPostList = async () => {
+  const res = await fetch('http://localhost:3000/api/posts', {
+    cache: 'no-cache'
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed')
+  }
+
+  return res.json()
+}
+
 const CardList = ({ page, cat }: ICardList) => {
   const POST_PER_PAGE = 2
   const count = 3

@@ -4,14 +4,6 @@ import { useRouter } from 'next/navigation'
 
 import styles from './login.module.css'
 import { useSession, signIn } from 'next-auth/react'
-// {
-//   "user": {
-//       "name": "Đoàn Hoàng Thịnh",
-//       "email": "dhthinh7@gmail.com",
-//       "image": "https://lh3.googleusercontent.com/a/ACg8ocIXXjwWiT4rekqVEVixHicss76kf7eMTQJnfZqUdo28Xg=s96-c"
-//   },
-//   "expires": "2023-10-17T18:26:42.608Z"
-// }
 const Login = () => {
   const { data, status } = useSession()
   const router = useRouter()

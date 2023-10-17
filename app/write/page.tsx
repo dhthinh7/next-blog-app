@@ -6,9 +6,11 @@ import 'react-quill/dist/quill.snow.css'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import styles from './writePage.module.css'
+import { useSession } from 'next-auth/react'
 
 const WritePage = () => {
   const router = useRouter()
+  const { status } = useSession()
 
   const [open, setOpen] = useState(false)
   const [file, setFile] = useState(null)
@@ -20,6 +22,10 @@ const WritePage = () => {
   const handleSubmit = useCallback(() => {
     console.log(value)
   }, [value])
+
+  if (status === 'authenticated') {
+    router.push('/')
+  }
 
   return (
     <div className={styles.container}>
